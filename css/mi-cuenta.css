@@ -1,0 +1,98 @@
+/* Gaon System · Mi cuenta (app web instalable) */
+.mc{padding:clamp(1.2rem,4vw,3rem) 0 4rem;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px)}
+.mc svg{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.mc .btn svg{width:20px;height:20px}
+.mc .btn.sm{min-height:44px}
+.mc-login{max-width:460px;margin:0 auto}
+.mc-hola{text-align:center;margin-bottom:1.4rem}
+.mc-hola img{border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.mc-hola h1{font-family:var(--ff-d);font-size:var(--step-3);line-height:1.05;margin:.8rem 0 .4rem}
+.mc-hola .lead{margin:0;color:var(--muted)}
+.mc-form{grid-template-columns:1fr}
+.mc-row{display:flex;flex-wrap:wrap;gap:.6rem}
+.mc-row .btn.solid{flex:1;justify-content:center}
+.mc-msg{display:block;border:0;padding:0;min-height:1.4em;color:var(--brass);font-weight:600}
+.mc-nota{color:var(--muted);font-size:.95rem;margin:1.2rem 0 0}
+.mc-small{font-size:.92rem;color:var(--muted)}
+
+/* Barra de cada pantalla */
+.mc-bar{display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem}
+.mc-t{font-family:var(--ff-d);font-size:var(--step-3);line-height:1.05;margin:0;flex:1;min-width:0;outline:none;overflow-wrap:anywhere}
+.mc-back{appearance:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;flex:none}
+.mc-back svg{width:24px;height:24px}
+.mc-back:hover{border-color:var(--ink)}
+.mc-salir{flex:none;border-color:var(--line)}
+.mc-sub{color:var(--muted);margin:-.6rem 0 1rem}
+.mc-cargando{color:var(--muted)}
+.mc-error{padding:.8rem 1rem;border-radius:var(--r-m);background:color-mix(in srgb,var(--p77) 15%,var(--surface));font-weight:600}
+
+/* Portada: tarjetas grandes */
+.mc-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+@media (min-width:900px){.mc-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.mc-tile{appearance:none;position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;min-height:170px;padding:1.1rem 1rem 1rem;border-radius:20px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;font:inherit;text-align:left;cursor:pointer;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);transition:transform .15s,border-color .2s,box-shadow .2s;overflow:hidden}
+.mc-tile::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:color-mix(in srgb,var(--c) 14%,transparent)}
+.mc-tile:hover{border-color:var(--c);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.mc-tile:active{transform:scale(.97)}
+.mc-ti{display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:color-mix(in srgb,var(--c) 22%,var(--surface));color:var(--ink);position:relative;z-index:1}
+.mc-ti svg{width:40px;height:40px;stroke-width:2.2}
+.mc-tt{position:relative;z-index:1}
+.mc-tt b{display:block;font-family:var(--ff-d);font-size:1.15rem;line-height:1.15;font-stretch:105%}
+.mc-tt small{display:block;color:var(--muted);font-size:.9rem;line-height:1.35;margin-top:.3rem}
+.mc-n{display:inline-block;margin-top:.5rem;font-style:normal;font-size:.82rem;font-weight:700;padding:.1rem .6rem;border-radius:999px;background:var(--c);color:#fff}
+.mc-n:empty{display:none}
+
+/* Aviso de instalar */
+.mc-inst{position:relative;display:flex;gap:.9rem;align-items:flex-start;padding:1rem 3rem 1rem 1rem;margin:1rem 0 0;border-radius:20px;background:color-mix(in srgb,var(--brass-fill) 18%,var(--surface));border:1.5px solid var(--brass-fill)}
+.mc-inst-i{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--brass-fill);color:#1A1406;flex:none}
+.mc-inst-i svg{width:28px;height:28px}
+.mc-inst h3{margin:0 0 .2rem;font-family:var(--ff-d);font-size:1.15rem}
+.mc-inst p{margin:0 0 .6rem}
+.mc-x{appearance:none;position:absolute;right:4px;top:4px;width:44px;height:44px;border:0;background:transparent;color:var(--muted);font-size:1.6rem;line-height:1;cursor:pointer;border-radius:50%}
+.mc-pasos{margin:.4rem 0;padding-left:1.4rem;display:flex;flex-direction:column;gap:.35rem}
+.mc-pasos li{padding-left:.2rem}
+.mc-ico{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;background:var(--surface);border:1px solid var(--line);vertical-align:middle}
+.mc-ico svg{width:18px;height:18px}
+
+/* Listas */
+.mc-lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.6rem}
+.mc-fila{display:flex;gap:.9rem;align-items:center;min-height:72px;padding:.8rem 1rem;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;transition:transform .15s,border-color .2s}
+.mc-fila:hover{border-color:var(--p600)}
+.mc-fila:active{transform:scale(.98)}
+.mc-fila b,.mc-ped b{display:block;font-size:1.05rem}
+.mc-fila small,.mc-ped small{display:block;color:var(--muted);font-size:.88rem}
+.mc-fi{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:color-mix(in srgb,var(--p600) 18%,var(--surface));flex:none}
+.mc-fi svg{width:30px;height:30px;stroke-width:2.2}
+.mc-vacio{text-align:center;padding:2rem 1rem;border:1.5px dashed var(--line);border-radius:20px}
+.mc-vacio>svg{width:72px;height:72px;color:var(--muted)}
+.mc-vacio p{font-size:1.1rem;margin:.6rem 0 1rem}
+.mc-ped{padding:1rem;border-radius:16px;border:1.5px solid var(--line);background:var(--surface)}
+.mc-ped-h{display:flex;gap:.9rem;align-items:center;margin-bottom:.9rem}
+.mc-est{list-style:none;margin:0 0 .9rem;padding:0;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.mc-est::before{content:"";position:absolute;left:12.5%;right:12.5%;top:11px;height:3px;background:var(--line)}
+.mc-est li{position:relative;display:flex;flex-direction:column;align-items:center;gap:.3rem;font-size:.8rem;color:var(--muted);text-align:center}
+.mc-est i{width:24px;height:24px;border-radius:50%;background:var(--surface);border:3px solid var(--line);position:relative;z-index:1}
+.mc-est .hecho i{background:var(--p800);border-color:var(--p800)}
+.mc-est .ahora i{background:var(--brass-fill);border-color:var(--ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--brass-fill) 35%,transparent)}
+.mc-est .ahora span{color:var(--ink);font-weight:700}
+
+/* Copia de llave */
+.mc-copia{max-width:560px}
+.mc-ci{display:grid;place-items:center;width:84px;height:84px;border-radius:24px;background:var(--brass-soft);margin-bottom:.8rem}
+.mc-ci svg{width:56px;height:56px;stroke-width:2.2}
+.mc-lead{font-size:1.15rem;margin:0 0 .8rem}
+
+/* Tablero en modo ver */
+.mc-am{padding:clamp(.8rem,3vw,1.4rem)}
+.mc-out{position:sticky;top:72px;z-index:6;margin:0 0 .8rem;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.mc-dib .am-nd{cursor:pointer;touch-action:manipulation}
+
+/* Animaciones suaves */
+.mc-anim .mc-entra{animation:mcEntra .28s cubic-bezier(.2,.7,.2,1)}
+.mc-anim .mc-tile{animation:mcEntra .35s cubic-bezier(.2,.7,.2,1) backwards}
+.mc-anim .mc-tile:nth-child(2){animation-delay:.05s}.mc-anim .mc-tile:nth-child(3){animation-delay:.1s}.mc-anim .mc-tile:nth-child(4){animation-delay:.15s}
+@keyframes mcEntra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.mc *{animation:none!important;transition:none!important}}
+
+/* Instalada como app: sin pie ni menú de la web */
+@media (display-mode:standalone){.foot,.top .nav,.top .menu-btn{display:none!important}.mc{padding-top:1rem}}

@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /
+# Al publicar, quitar la línea anterior pero mantener estas (área privada):
+Disallow: /planificador.html
+Disallow: /solicitar-acceso.html
+Disallow: /crear-contrasena.html
+Disallow: /admin.html
+Disallow: /mi-cuenta.html
+Disallow: /api/

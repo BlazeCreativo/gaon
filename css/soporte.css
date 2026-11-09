@@ -1,0 +1,25 @@
+/* Chat privado: mismos colores y controles que el planificador. */
+.soporte-flotante{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:55;box-shadow:0 4px 20px #0003;max-width:calc(100% - 2rem);min-height:48px}
+body.pl-ed .soporte-flotante{position:static;width:fit-content;margin:1rem 1rem 1rem auto}
+.soporte-flotante[hidden]{display:none}
+.soporte-dialog{display:block;width:calc(100% - 1rem);max-width:520px;max-height:calc(100dvh - 1rem);margin:auto;padding:1rem;border:1px solid var(--line);border-radius:var(--r-m);background:var(--surface);color:var(--ink);overflow-y:auto}
+.soporte-dialog:not([open]){display:none}
+.soporte-dialog::backdrop{background:#0008}
+.soporte-dialog .pl-bar{margin-bottom:.6rem}
+.soporte-dialog h2{font-size:1.35rem}
+.soporte-dialog p{margin:.5rem 0}
+.soporte-dialog label{display:block;margin-top:.65rem}
+.soporte-dialog select,.soporte-dialog textarea,.soporte-dialog input{width:100%;min-width:0}
+.soporte-dialog form{display:block}
+.soporte-dialog input[type=file]{font-size:.9rem;padding:.5rem 0}
+.soporte-dialog #soporte-error{overflow-wrap:anywhere}
+.soporte-mensajes{list-style:none;margin:.8rem 0;padding:.5rem;max-height:30dvh;min-height:6rem;overflow:auto;border:1px solid var(--line);border-radius:var(--r-s);background:var(--bg);overscroll-behavior:contain}
+.soporte-mensaje{padding:.6rem 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.soporte-mensaje:last-child{border:0}
+.soporte-mensaje b{font-size:.82rem;color:var(--muted)}
+.soporte-mensaje p{white-space:pre-wrap}
+.soporte-mensaje .btn{margin:.25rem 0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+#soporte-adjuntos{padding-left:1.2rem;overflow-wrap:anywhere}
+@media(min-width:600px){.soporte-dialog{padding:1.5rem}.soporte-mensajes{max-height:35dvh}}
+@media(max-width:599px){body.pl-ed .soporte-flotante{display:none}.soporte-flotante{position:static;display:block;margin:1rem 1rem 1rem auto;max-width:calc(100% - 2rem)}}
+@media print{.soporte-flotante,.soporte-dialog{display:none!important}}

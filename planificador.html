@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planificador de amaestramiento · Gaon System</title>
+<meta name="description" content="Área privada para centros técnicos: convierte la lista de usuarios y puertas en la vista combinada de un plan de amaestramiento Mul-T-Lock.">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#1B2735">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Gaon System">
+<meta property="og:title" content="Planificador de amaestramiento · Gaon System">
+<meta property="og:description" content="Área privada para centros técnicos: convierte la lista de usuarios y puertas en la vista combinada de un plan de amaestramiento Mul-T-Lock.">
+<meta property="og:image" content="https://blazecreativo.github.io/gaon/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=localStorage.getItem("gaon-tema");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="css/site.css?v=0db2d415">
+<link rel="stylesheet" href="css/planificador.css?v=0d6a3518">
+<link rel="stylesheet" href="css/soporte.css?v=c3c14bd9">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Gaon System, inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="13" r="5.5" fill="none" stroke="var(--brass-fill)" stroke-width="2.4"/><path d="M13.5 17.5h5l1.2 8h-7.4z" fill="var(--brass-fill)"/></svg><span>GAON SYSTEM<small>Distribuidor exclusivo de <span class="nw">Mul-T-Lock</span> en España</small></span></a>
+    <nav class="nav" id="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="productos.html">Productos</a><a href="amaestramiento.html">Amaestramiento</a><a href="profesionales.html">Profesionales</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a></nav>
+    <button class="icon-btn theme-btn" type="button" aria-label="Cambiar tema de color"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    <button class="icon-btn menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<main id="main">
+
+<section class="ph pl-ph"><div class="wrap">
+  <p class="crumbs"><a href="index.html">Inicio</a> / <a href="profesionales.html">Profesionales</a> / Planificador</p>
+  <h1>Planificador de amaestramiento.</h1>
+  <p class="lead">De la lista «quién abre qué» a la vista combinada del plan: llaves, cilindros, jerarquía y avisos, todo listo para firmar y pedir.</p>
+</div></section>
+
+<div class="wrap pl" id="pl" data-api="">
+<noscript><p class="pl-demo">El planificador necesita JavaScript.</p></noscript>
+
+<section class="pl-view pl-login" id="v-acceso" aria-labelledby="acc-t">
+  <div class="pl-card">
+    <h2 id="acc-t">Acceso profesional</h2>
+    <p class="muted">Área privada para centros técnicos de Gaon System.</p>
+    <div class="pl-demo" role="note"><b>DEMO.</b> Vista previa privada sin servidor: los planes se guardan solo en este navegador.
+      Entra con el usuario <code>demo</code> (profesional) o <code>admin-demo</code> (Gaon); contraseña <code>demo-gaon</code>. No son datos reales.</div>
+    <form class="form pl-form" id="f-acceso" novalidate>
+      <div class="full"><label for="a-user">Usuario</label><input id="a-user" name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" required></div>
+      <div class="full"><label for="a-pass">Contraseña</label><input id="a-pass" name="contrasena" type="password" autocomplete="current-password" required></div>
+      <div class="full"><button class="btn solid" type="submit">Entrar</button> <button class="btn" type="button" id="a-demo">Rellenar datos demo</button></div>
+      <p class="form-msg" id="a-msg" role="alert" tabindex="-1"></p>
+    </form>
+    <p class="muted pl-small">¿No tienes acceso? <a href="solicitar-acceso.html">Solicita acceso profesional</a>.</p>
+  </div>
+</section>
+
+<section class="pl-view" id="v-planes" hidden aria-labelledby="pl-t">
+  <div class="pl-bar"><h2 id="pl-t">Mis planes/pedidos</h2><span class="pl-who" id="pl-who"></span>
+    <button class="btn sm" type="button" id="b-admin" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14a6.5 6.5 0 0 1 3.5 6"/></svg>Panel de administración</button>
+    <button class="btn sm" type="button" id="b-salir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"/></svg>Salir</button></div>
+  <div class="pl-acts"><button class="btn solid" type="button" id="b-nuevo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Nuevo plan</button><button class="btn" type="button" id="b-ejemplo">Cargar un plan de ejemplo</button></div>
+  <ul class="pl-list" id="pl-list" aria-live="polite"></ul>
+  <h3>Pedidos</h3><button class="btn solid" type="button" id="b-igualacion">Nueva igualación</button>
+  <ul class="pl-list" id="pedidos-list" aria-live="polite"></ul>
+</section>
+
+<section class="pl-view" id="v-editor" hidden aria-labelledby="ed-t">
+  <div class="pl-bar">
+    <button class="btn sm" type="button" data-go="planes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Mis planes</button>
+    <h2 id="ed-t" class="pl-title">Plan</h2>
+    <span class="pl-save" id="ed-save" role="status" aria-live="polite"></span>
+    <button class="icon-btn" type="button" id="b-deshacer" aria-label="Deshacer (Ctrl+Z)" title="Deshacer (Ctrl+Z)" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></svg></button>
+  </div>
+
+  <details class="pl-meta" open><summary>Datos del proyecto</summary>
+    <div class="form pl-form">
+      <div><label for="m-nombre">Proyecto</label><input id="m-nombre" data-m="nombre" required></div>
+      <div><label for="m-cliente">Cliente</label><input id="m-cliente" data-m="cliente" autocomplete="organization"></div>
+      <div class="full"><label for="m-obra">Obra o dirección</label><input id="m-obra" data-m="obra" autocomplete="street-address"></div>
+      <div><label for="m-fecha">Fecha</label><input id="m-fecha" data-m="fecha" type="date"></div>
+      <div><label for="m-plat">Plataforma</label><select id="m-plat" data-m="plataforma"><option value="">Sin decidir</option><option>MTL800</option><option>MTL700</option><option>MTL600</option><option>MTL500</option><option>MTL400</option><option>MTL300</option><option>MTL200</option><option>Classic</option><option>GAON/7x7</option></select></div>
+      <div><label for="m-resp">Centro técnico / responsable</label><input id="m-resp" data-m="responsable"></div>
+      <div class="pl-mk"><label class="check"><input type="checkbox" id="m-mincl"> Llave maestra general (abre todo)</label>
+        <div class="pl-mk-row"><label for="m-mtit" class="sr">Titular de la maestra</label><input id="m-mtit" placeholder="Titular"><label for="m-mcant" class="sr">Copias de la maestra</label><input id="m-mcant" type="number" min="0" max="999" inputmode="numeric" title="Copias"></div></div>
+      <div class="full"><label for="m-notas">Notas para Gaon</label><textarea id="m-notas" data-m="notas" rows="2"></textarea></div>
+    </div>
+  </details>
+
+  <div class="pl-sum" id="pl-sum" aria-live="polite"></div>
+
+  <div class="pl-tabs" role="tablist" aria-label="Forma de introducir los accesos">
+    <button role="tab" id="t-tabla" aria-controls="tp-tabla" aria-selected="true">Tabla</button>
+    <button role="tab" id="t-libreta" aria-controls="tp-libreta" aria-selected="false" tabindex="-1">Libreta</button>
+    <button role="tab" id="t-pegar" aria-controls="tp-pegar" aria-selected="false" tabindex="-1">Pegar lista</button>
+  </div>
+
+  <div class="pl-panel" role="tabpanel" id="tp-tabla" aria-labelledby="t-tabla">
+    <div class="pl-two">
+      <div><h3>Usuarios</h3><div class="pl-scroll"><table class="pl-t" id="tb-u"><thead><tr><th scope="col">Nombre</th><th scope="col">Cargo</th><th scope="col">Copias</th><th scope="col"><span class="sr">Quitar</span></th></tr></thead><tbody></tbody></table></div>
+        <button class="btn sm" type="button" data-add="u"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Añadir usuario</button></div>
+      <div><h3>Puertas</h3><div class="pl-scroll"><table class="pl-t" id="tb-d"><thead><tr><th scope="col">Cil.</th><th scope="col">Nombre</th><th scope="col">Ubicación</th><th scope="col">Cant.</th><th scope="col"><span class="sr">Quitar</span></th></tr></thead><tbody></tbody></table></div>
+        <button class="btn sm" type="button" data-add="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Añadir puerta</button></div>
+    </div>
+    <h3>Quién abre qué</h3>
+    <p class="muted pl-small">Marca la casilla donde el usuario de la fila abre la puerta de la columna.</p>
+    <div class="pl-scroll pl-gridwrap"><table class="pl-grid" id="tb-g"></table></div>
+  </div>
+
+  <div class="pl-panel" role="tabpanel" id="tp-libreta" aria-labelledby="t-libreta" hidden>
+    <p class="muted pl-small">Como en la libreta: arrastra desde un usuario hasta una puerta. También puedes tocar un usuario y luego una puerta. Toca una línea para quitarla.</p>
+    <div class="nb" id="nb">
+      <div class="nb-col"><h3>Usuarios</h3><ul id="nb-u"></ul><button class="btn sm" type="button" data-add="u"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Usuario</button></div>
+      <svg class="nb-svg" id="nb-svg" aria-hidden="true"></svg>
+      <div class="nb-col nb-r"><h3>Puertas</h3><ul id="nb-d"></ul><button class="btn sm" type="button" data-add="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Puerta</button></div>
+    </div>
+    <p class="pl-small" id="nb-out" aria-live="polite"></p>
+  </div>
+
+  <div class="pl-panel" role="tabpanel" id="tp-pegar" aria-labelledby="t-pegar" hidden>
+    <div class="pl-two">
+      <div class="form pl-form">
+        <div class="full"><label for="imp-txt">Pega la lista</label><textarea id="imp-txt" rows="9" spellcheck="false" placeholder="1: A, D&#10;2: B, E&#10;3: C, F"></textarea></div>
+        <div class="full pl-row"><label class="btn sm pl-file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Abrir CSV o TXT<input type="file" id="imp-file" accept=".csv,.txt,.tsv,text/csv,text/plain" class="sr"></label>
+          <button class="btn sm" type="button" id="imp-plantilla">Descargar plantilla</button></div>
+        <p class="full pl-small" id="imp-prev" aria-live="polite">Pega o abre una lista para ver qué se va a leer.</p>
+        <div class="full pl-row"><button class="btn solid" type="button" id="imp-reemplazar" disabled>Reemplazar el plan</button><button class="btn" type="button" id="imp-anadir" disabled>Añadir al plan</button></div>
+      </div>
+      <div class="pl-help"><h3>Formatos que entiende</h3>
+        <p><b>Lista:</b> una línea por usuario, <code>Ana: Almacén, Oficina</code>.</p>
+        <p><b>Pares:</b> <code>Ana;Almacén</code>, una línea por cada puerta que abre.</p>
+        <p><b>Matriz de Excel:</b> copia las celdas y pégalas. Primera fila, las puertas; primera columna, los usuarios; una X donde abre.</p>
+        <p class="muted">«Añadir» une por nombre: no duplica usuarios ni puertas que ya estén.</p></div>
+    </div>
+  </div>
+
+  <section class="pl-res" aria-labelledby="cv-t">
+    <div class="pl-res-head"><h2 id="cv-t">Vista combinada</h2>
+      <p class="muted">Filas: llaves (KeyMark). Columnas: cilindros (CylMark). La X marca qué llave abre cada cilindro.</p></div>
+    <div class="pl-scroll cv-wrap" tabindex="0" role="region" aria-label="Matriz de la vista combinada"><table class="cv" id="cv"></table></div>
+    <ul class="cv-leg" aria-label="Leyenda"><li><i class="lg-g"></i>Maestra general</li><li><i class="lg-s"></i>Submaestra</li><li><i class="lg-i"></i>Individual</li><li><b class="x" aria-hidden="true">✕</b>Abre</li></ul>
+
+    <div class="pl-cols">
+      <div><h3>Jerarquía</h3><div id="tree" class="tree"></div></div>
+      <div><h3>Avisos</h3><ul id="avisos" class="avisos"></ul></div>
+    </div>
+
+    <h3>Materiales</h3>
+    <div class="pl-two">
+      <div class="pl-scroll"><table class="pl-t pl-bom" id="bom-c"></table></div>
+      <div class="pl-scroll"><table class="pl-t pl-bom" id="bom-k"></table></div>
+    </div>
+
+    <div class="pl-out">
+      <button class="btn solid" type="button" id="o-print"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 9V3h10v6M7 17H4v-7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v7h-3"/><path d="M7 14h10v7H7z"/></svg>Plan de cierre (PDF)</button>
+      <button class="btn" type="button" id="o-pedido">Preparar pedido y adjuntos</button>
+      <button class="btn" type="button" id="o-quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Solicitar presupuesto</button>
+      <button class="btn sm" type="button" id="o-csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Matriz CSV</button>
+      <button class="btn sm" type="button" id="o-bom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>Materiales CSV</button>
+      <button class="btn sm" type="button" id="o-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>Copiar resumen</button>
+    </div>
+    <p class="pl-small muted">«Solicitar presupuesto» envía a Gaon System el resumen del plan (cilindros, llaves y avisos); lo verán en su panel.</p>
+  </section>
+</section>
+</div>
+<div class="pl-print" id="pl-print"></div>
+<div class="pl-toast" id="pl-toast" role="status" aria-live="polite"></div>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="13" r="5.5" fill="none" stroke="var(--brass-fill)" stroke-width="2.4"/><path d="M13.5 17.5h5l1.2 8h-7.4z" fill="var(--brass-fill)"/></svg><span>GAON SYSTEM</span></a>
+        <p class="muted" style="margin-top:1rem">Importación, fabricación y distribución de productos y sistemas de alta seguridad. Fundada en 1984.</p>
+        <p class="foot-tel"><a href="tel:+34913807580">+34 913 80 75 80</a> · <a href="mailto:gaonsystem@gaonsys.es">gaonsystem@gaonsys.es</a></p>
+      </div>
+      <div><h2 class="fh">Catálogo</h2><ul><li><a href="productos.html#cilindros">Cilindros</a></li><li><a href="productos.html#candados">Candados</a></li><li><a href="productos.html#cierres">Cierres y alarmas</a></li><li><a href="index.html#plataformas">Plataformas</a></li></ul></div>
+      <div><h2 class="fh">Empresa</h2><ul><li><a href="amaestramiento.html">Amaestramiento</a></li><li><a href="profesionales.html">Red de centros técnicos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="mi-cuenta.html">Mi cuenta (app)</a></li><li><a href="planificador.html">Planificador (acceso profesional)</a></li></ul></div>
+      <div><h2 class="fh">Legal</h2><ul><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="privacidad.html">Privacidad</a></li><li><a href="cookies.html">Cookies</a></li></ul></div>
+    </div>
+    <div class="legal-row"><span>© <span id="year">2026</span> GAON SYSTEM S.A.</span><span class="disc"><span class="nw">Mul-T-Lock</span>, MTL, Interactive+, MT5, MT5+, ClassicPro, 7x7, ENTR y ArmaDLock son marcas de sus respectivos titulares.</span></div>
+  </div>
+</footer>
+<script src="js/plan-motor.js?v=4df017e4" defer></script>
+<script src="js/cuentas-nucleo.js?v=545844c0" defer></script>
+<script src="js/cuentas.js?v=d64e7742" defer></script>
+<script src="js/planificador.js?v=905ffecf" defer></script>
+<script src="js/adjuntos.js?v=6018e9c8" defer></script>
+<script src="js/pedidos-nucleo.js?v=5c49dd11" defer></script>
+<script src="js/pedidos.js?v=641ed638" defer></script>
+<script src="js/soporte-almacen.js?v=b311e2da" defer></script>
+<script src="js/soporte.js?v=9ebabc41" defer></script>
+<script src="js/site.js?v=0747fb52" defer></script>
+</body>
+</html>

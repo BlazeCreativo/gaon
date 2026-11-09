@@ -1,0 +1,3 @@
+# Librerías de terceros que publica-check no debe revisar como código propio (minificado, «debug», console.log).
+# js/cilindro3d.js: Three.js 0.170 empaquetado con esbuild desde tools/3d (la librería no se toca).
+js/cilindro3d.js
